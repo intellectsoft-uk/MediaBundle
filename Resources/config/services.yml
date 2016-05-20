@@ -1,31 +1,31 @@
 services:
-    app_media.image.processor_factory:
+    shelper_media.image.processor_factory:
         class: SHelper\MediaBundle\Image\ImageProcessor\Factory\ImagickFactory
 
-    app_media.image_repository:
+    shelper_media.image_repository:
         class: SHelper\MediaBundle\Model\Repository\ImageRepository
         factory: ["@doctrine.orm.entity_manager", getRepository]
         arguments:
-            - AppMediaBundle:Image
+            - SHelperMediaBundle:Image
 
-    app_media.data.abstract_image_service:
+    shelper_media.data.abstract_image_service:
         abstract: true
         arguments:
-            - "@app_media.image_repository"
-            - "@app_media.image.processor_factory"
+            - "@shelper_media.image_repository"
+            - "@shelper_media.image.processor_factory"
             - %kernel.root_dir%
             - %server_host%
 
-    app_media.data.image_service:
-        parent: app_media.data.abstract_image_service
+    shelper_media.data.image_service:
+        parent: shelper_media.data.abstract_image_service
         class: SHelper\MediaBundle\DataService\ImageService
         arguments:
-            - %app_media.data.image_service_config%
+            - %shelper_media.data.image_service_config%
 
-    app_media.serializer.image_handler:
+    shelper_media.serializer.image_handler:
         class: SHelper\MediaBundle\Serializer\Handler\ImageHandler
         arguments:
-            - "@app_media.data.image_service"
+            - "@shelper_media.data.image_service"
         tags:
             - name: jms_serializer.handler
               type: SHelper\MediaBundle\Model\Entity\Image

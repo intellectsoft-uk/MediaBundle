@@ -5,7 +5,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="SHelper\MediaBundle\Model\Repository\ImageRepository")
- * @ORM\Table(name="app_media_image")
+ * @ORM\Table(name="shelper_media_image")
  */
 class Image
 {

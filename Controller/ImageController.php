@@ -13,7 +13,7 @@ class ImageController extends Controller
 {
     /**
      * @var IImageService
-     * @DI\Inject("app_media.data.image_service")
+     * @DI\Inject("shelper_media.data.image_service")
      */
     private $imageService;
 

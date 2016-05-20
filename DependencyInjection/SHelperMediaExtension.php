@@ -13,7 +13,7 @@ use Symfony\Component\DependencyInjection\Loader;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  */
-class AppMediaExtension extends Extension
+class SHelperMediaExtension extends Extension
 {
     /**
      * {@inheritdoc}
@@ -41,11 +41,11 @@ class AppMediaExtension extends Extension
             $preview = array_merge($defaultResolution, $preview);
         }
 
-        $definition = new DefinitionDecorator('app_media.data.abstract_image_service');
+        $definition = new DefinitionDecorator('shelper_media.data.abstract_image_service');
         $definition->addArgument($config);
 
-//        $container->setDefinition('app_media.data.image_service', $definition);
-//        $container->setDefinition('app_media.data.image_service_config', $definition);
-        $container->setParameter('app_media.data.image_service_config', $config);
+//        $container->setDefinition('shelper_media.data.image_service', $definition);
+//        $container->setDefinition('shelper_media.data.image_service_config', $definition);
+        $container->setParameter('shelper_media.data.image_service_config', $config);
     }
 }

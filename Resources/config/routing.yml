@@ -1,9 +1,9 @@
-app_media_image_create:
+shelper_media_image_create:
     path:     /media/image
-    defaults: { _controller: AppMediaBundle:Image:create }
+    defaults: { _controller: SHelperMediaBundle:Image:create }
     methods: [POST]
 
-app_media_image_update:
+shelper_media_image_update:
     path:     /media/image/{imageId}
-    defaults: { _controller: AppMediaBundle:Image:update }
+    defaults: { _controller: SHelperMediaBundle:Image:update }
     methods: [PUT]

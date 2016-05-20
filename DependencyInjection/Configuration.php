@@ -18,7 +18,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('app_media');
+        $rootNode = $treeBuilder->root('shelper_media');
 
         $rootNode
             ->children()
