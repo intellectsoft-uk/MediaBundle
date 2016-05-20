@@ -1,0 +1,43 @@
+{
+    "name": "symfony-helper/media-bundle",
+    "type": "symfony-bundle",
+    "description": "This Bundle provides tools to rapidly process image with Symfony",
+    "keywords": ["rest"],
+    "homepage": "https://github.com/itcreator/MediaBundle",
+    "license": "BSD-3",
+    "authors": [
+        {
+            "name": "Vital Leshchyk",
+            "email": "vitalleshchyk@gmail.com"
+        }
+    ],
+
+    "require": {
+        "php": ">=7.0.1",
+        "ext-imagick": "*",
+        "doctrine/orm": "^2.5",
+        "doctrine/doctrine-bundle": "^1.6",
+        "doctrine/doctrine-cache-bundle": "^1.2",
+        "friendsofsymfony/rest-bundle": "~1.7.8",
+        "jms/di-extra-bundle": "~1.7",
+        "jms/serializer-bundle": "~1.1.0",
+        "symfony/symfony": "3.0.*",
+        "willdurand/hateoas-bundle": "~1.1.1"
+    },
+
+    "autoload":{
+        "psr-4":{
+            "SHelper\\MediaBundle\\": ""
+        }
+    },
+
+    "conflict": {
+    },
+
+
+    "extra": {
+        "branch-alias": {
+            "dev-master": "master"
+        }
+    }
+}
