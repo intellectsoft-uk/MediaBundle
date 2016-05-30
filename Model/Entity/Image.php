@@ -77,4 +77,13 @@ class Image
 
         return $this;
     }
+
+    public function toArray()
+    {
+        return [
+            'id' => $this->id,
+            'url' => $this->url,
+            'preview' => $this->preview,
+        ];
+    }
 }
