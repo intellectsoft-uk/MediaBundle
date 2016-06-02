@@ -15,7 +15,7 @@ class ImageController extends Controller
      * @var IImageService
      * @DI\Inject("shelper_media.data.image_service")
      */
-    private $imageService;
+    protected $imageService;
 
     /**
      * @param Request $request
