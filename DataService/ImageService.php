@@ -12,21 +12,21 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 class ImageService implements IImageService
 {
     /** @var IImageFactory */
-    private $imageProcessorFactory;
+    protected $imageProcessorFactory;
 
     /** @var IImageRepository */
-    private $imageRepository;
+    protected $imageRepository;
 
     /** @var string */
-    private $webRoot;
+    protected $webRoot;
 
     /** @var string */
-    private $host;
+    protected $host;
 
     /** @var array */
-    private $resolutionConfig;
+    protected $resolutionConfig;
 
-    private $defaultResolution = [
+    protected $defaultResolution = [
         'width' => 200,
         'height' => 200,
     ];
@@ -36,6 +36,7 @@ class ImageService implements IImageService
      * @param IImageFactory $imageFactory
      * @param string $root
      * @param string $host
+     * @param int[] $resolutionConfig
      */
     public function __construct(IImageRepository $imageRepository, IImageFactory $imageFactory, $root, $host, array $resolutionConfig)
     {
@@ -53,7 +54,7 @@ class ImageService implements IImageService
      * @param string $ext
      * @return string
      */
-    private function generateFileName($ext = 'jpg')
+    protected function generateFileName($ext = 'jpg')
     {
         //TODO:: move it to storage service
         $fileName = md5(rand());
@@ -76,7 +77,7 @@ class ImageService implements IImageService
      * @param int $height
      * @return $this
      */
-    private function prepareImage(IImageProcessor $imageProcessor, $outputFileName, $width = 172, $height = 172)
+    protected function prepareImage(IImageProcessor $imageProcessor, $outputFileName, $width = 172, $height = 172)
     {
         $imageProcessor
             ->normalize()
@@ -147,7 +148,7 @@ class ImageService implements IImageService
     /**
      * @return array
      */
-    private function getOriginalResolution()
+    protected function getOriginalResolution()
     {
         return array_merge($this->defaultResolution, $this->resolutionConfig['original_resolution']);
     }
